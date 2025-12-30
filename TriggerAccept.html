@@ -1,0 +1,13 @@
+<html>
+  <body>
+    <p>Redirecting, please wait...</p>
+    <script>
+      // Trigger the second flow for Accept
+      fetch('https://default805a6913d53246d5825ac983de7a8d.d2.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/ca56a28dfac74f5a9758c102bbb8c309/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=KT__cheHfKfWQGxpJTaANULenuafrkkeIZb6FWfASSU&decision=Accepted')
+        .catch(err => console.log(err));
+
+      // Redirect immediately to Thank You page
+      window.location.href = 'https://syu-da.github.io/Sales-Contract/ThankYou.html';
+    </script>
+  </body>
+</html>
