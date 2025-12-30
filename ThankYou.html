@@ -1,34 +1,18 @@
-<!DOCTYPE html>
 <html>
-  <head>
-    <title>Thank You</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        text-align: center;
-        margin-top: 100px;
-        background-color: #f9f9f9;
-      }
-      .container {
-        display: inline-block;
-        padding: 30px;
-        border: 1px solid #ddd;
-        border-radius: 8px;
-        background-color: #fff;
-      }
-      h2 {
-        color: #4CAF50;
-      }
-      p {
-        color: #555;
-      }
-    </style>
-  </head>
   <body>
-    <div class="container">
-      <h2>Thank You!</h2>
-      <p>Your decision has been successfully recorded.</p>
-      <p>You may now close this tab.</p>
-    </div>
+    <p>Processing, please wait...</p>
+    <script>
+      // Optional: read dynamic query parameters from URL
+      const params = new URLSearchParams(window.location.search);
+      const week = params.get('week');
+      const summaryId = params.get('summaryId');
+
+      // Trigger your second flow (Accept)
+      fetch(`https://default805a6913d53246d5825ac983de7a8d.d2.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/ca56a28dfac74f5a9758c102bbb8c309/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=KT__cheHfKfWQGxpJTaANULenuafrkkeIZb6FWfASSU&decision=Accepted&week=${week}&summaryId=${summaryId}`)
+        .catch(err => console.log(err));
+
+      // Redirect immediately to Thank You page
+      window.location.href = 'https://syu-da.github.io/Sales-Contract/ThankYou.html';
+    </script>
   </body>
 </html>
